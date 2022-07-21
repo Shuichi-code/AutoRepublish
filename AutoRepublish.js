@@ -2,11 +2,12 @@ const puppeteer = require("puppeteer");
 require("dotenv").config();
 
 //Configure
-const debugMode = true;
+const debugMode = true; //set to true if you want the browser to pop up while running
+const customTemplateId = 6827; //change this to the id of the template editor that you want to republish
+const isStaging = true; //set to true if publishing in staging, set to false if publishing to prod
+
 const botUsername = process.env.REALTAIR_USERNAME;
 const botPassword = process.env.REALTAIR_PASSWORD;
-const customTemplateId = 6827;
-const isStaging = true;
 
 (async () => {
     const browser = await puppeteer.launch({
